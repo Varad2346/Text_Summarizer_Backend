@@ -5,7 +5,7 @@ import requests
 from dotenv import load_dotenv
 
 app = Flask(__name__)
-CORS(app)  # Enable CORS
+CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 # Set your HF API key here or get from environment variable
 HF_API_KEY = os.getenv("HF_API_KEY")
